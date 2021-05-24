@@ -1,7 +1,10 @@
 package com.crowdar.examples.steps;
 
 import com.crowdar.core.PageSteps;
+import com.crowdar.examples.constants.Booking.HomeBookingConstants;
+import com.crowdar.examples.services.Booking.BookingHabitacionService;
 import com.crowdar.examples.services.Booking.BookingHomeService;
+import com.crowdar.examples.services.Booking.HotelBookingService;
 import com.crowdar.examples.services.Challenge.PhpHomeService;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -14,15 +17,22 @@ public class BookingSteps extends PageSteps {
         BookingHomeService.goHome();
     }
 
-    @When("El usuario tapea la opcion Hotels")
-    public void elUsuarioTapeaLaOpcionHotels() {
+    @And("Completa el formulario con sus requerimientos (.*)")
+    public void completaElFormularioConSusRequerimientos(String destino) {
+        BookingHomeService.insertDestino(destino);
+        BookingHomeService.insertFecha();
+        BookingHomeService.insertAdultsHabit();
+        BookingHomeService.buscar();
     }
 
-    @And("Completa el formulario con sus requerimientos")
-    public void completaElFormularioConSusRequerimientos() {
+    @And("selecciona un Hotel")
+    public void seleccionaUnHotel() {
+       HotelBookingService.hotelElegido();
+       HotelBookingService.hotelDisponible();
     }
 
-    @Then("le reenvia al los posibles hoteles disponibles")
-    public void leReenviaAlLosPosiblesHotelesDisponibles() {
+    @When("seleciona una habitacion para reservar")
+    public void selecionaUnaHabitacionParaReservar() {
+        BookingHabitacionService.selectHabitacion();
     }
 }

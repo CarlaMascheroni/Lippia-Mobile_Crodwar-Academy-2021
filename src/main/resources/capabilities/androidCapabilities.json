@@ -2,8 +2,8 @@
   "deviceName": "{{deviceName}}",
   "app": "{{app}}",
   "platformName": "Android",
-  "appPackage": "com.booking",
+  "appPackage": "com.phptravelsnative",
   "resetKeyboard": "true",
   "unicodeKeyboard": "true",
-  "deviceId": "192.168.0.12:5555"
+  "deviceId": "192.168.0.160:5555"
 }

@@ -12,7 +12,7 @@ import org.testng.Assert;
 public class ChallengeSteps extends PageSteps {
     @Given("El usuario se encuentra en la home de la app")
     public void elUsuarioSeEncuentraEnLaHomeDeLaApp() {
-        PhpHomeService.isViewLoaded();
+       // PhpHomeService.isViewLoaded();
     }
 
     @When("El usuario tapea la opcion Tours")

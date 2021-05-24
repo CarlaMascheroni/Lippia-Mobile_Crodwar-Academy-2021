@@ -1,5 +1,6 @@
 Feature: El usuario realiza la reserva  de un Tour en la app de PHPTRAVELS
 
+  @Demo
   Scenario Outline: Realizar reserva de un Tour en phptravels
     Given El usuario se encuentra en la home de la app
     When El usuario tapea la opcion Tours
